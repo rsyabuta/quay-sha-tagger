@@ -6,6 +6,6 @@ WORKDIR /go/src/app
 # this will ideally be built by the ONBUILD below ;)
 CMD ["go-wrapper", "run"]
 
-ONBUILD COPY . /go/src/app
-ONBUILD RUN go-wrapper download
-ONBUILD RUN go-wrapper install
+COPY . /go/src/app
+RUN go-wrapper download
+RUN go-wrapper install
