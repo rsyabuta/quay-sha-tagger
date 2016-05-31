@@ -36,7 +36,7 @@ type QuayBuild struct {
 		CommitInfo    struct {
 			URL     string `json:"url"`
 			Message string `json:"message"`
-			Date    int64  `json:"date"`
+			Date    string `json:"date"`
 			Author  struct {
 				Username  string `json:"username"`
 				URL       string `json:"url"`
