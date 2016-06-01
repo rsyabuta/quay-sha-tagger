@@ -4,6 +4,7 @@ RUN mkdir -p /go/src/app
 WORKDIR /go/src/app
 
 # this will ideally be built by the ONBUILD below ;)
+EXPOSE 3000
 CMD ["go-wrapper", "run"]
 
 COPY . /go/src/app
