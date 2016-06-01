@@ -112,6 +112,11 @@ func (c *Context) TagBuild(rw web.ResponseWriter, req *web.Request) {
 	}
 }
 
+func (c *Context) Ping(rw web.ResponseWriter, req *web.Request) {
+
+	fmt.Fprint(rw, "pong\n")
+}
+
 func (b *QuayBuild) GetImage() (*QuayImage, error) {
 
 	if len(b.DockerTags) == 0 {
@@ -152,5 +157,6 @@ func main() {
 	logger = zap.NewJSON()
 	flag.Parse()
 	router := web.New(Context{}).Post("/tag", (*Context).TagBuild)
+	router := web.New(Context{}).Get("/ping", (*Context).Ping)
 	http.ListenAndServe("0.0.0.0:3000", router)
 }
