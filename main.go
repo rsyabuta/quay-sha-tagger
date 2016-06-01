@@ -157,6 +157,6 @@ func main() {
 	logger = zap.NewJSON()
 	flag.Parse()
 	router := web.New(Context{}).Post("/tag", (*Context).TagBuild)
-	router := web.New(Context{}).Get("/ping", (*Context).Ping)
+	router.Get("/ping", (*Context).Ping)
 	http.ListenAndServe("0.0.0.0:3000", router)
 }
