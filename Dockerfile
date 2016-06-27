@@ -1,6 +1,6 @@
 FROM golang:1.6-alpine
 
-RUN apk add --no-cache ca-certificates git && \
+RUN apk add --no-cache openssh-client git && \
     mkdir -p /go/src/app
 WORKDIR /go/src/app
 
