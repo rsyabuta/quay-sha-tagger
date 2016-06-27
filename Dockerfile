@@ -1,4 +1,4 @@
-FROM golang:1.6
+FROM golang:1.6-alpine
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app
