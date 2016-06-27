@@ -8,4 +8,4 @@ EXPOSE 3000
 CMD ["quay-sha-tagger"]
 
 COPY . /go/src/app
-RUN go build -v
+RUN go build -v -o /bin/quay-sha-tagger
