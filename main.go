@@ -117,6 +117,11 @@ func (c *Context) Ping(rw web.ResponseWriter, req *web.Request) {
 	fmt.Fprint(rw, "pong\n")
 }
 
+func (c *Context) Version(rw web.ResponseWriter, req *web.Request) {
+
+	fmt.Fprint(rw, "v1.0.0\n")
+}
+
 func (b *QuayBuild) GetImage() (*QuayImage, error) {
 
 	if len(b.DockerTags) == 0 {
@@ -158,5 +163,6 @@ func main() {
 	flag.Parse()
 	router := web.New(Context{}).Post("/tag", (*Context).TagBuild)
 	router.Get("/ping", (*Context).Ping)
+	router.Get("/version", (*Context).Version)
 	http.ListenAndServe("0.0.0.0:3000", router)
 }
