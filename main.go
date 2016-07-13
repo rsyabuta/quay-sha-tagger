@@ -119,7 +119,7 @@ func (c *Context) Ping(rw web.ResponseWriter, req *web.Request) {
 
 func (c *Context) Version(rw web.ResponseWriter, req *web.Request) {
 
-	fmt.Fprint(rw, "v1.0.0\n")
+	fmt.Fprint(rw, "v1.0.1\n")
 }
 
 func (b *QuayBuild) GetImage() (*QuayImage, error) {
